@@ -1,12 +1,13 @@
 import { sendWelcomeEmail } from '../email/welcome';
 
 //
-// Dispatches the welcome email for a signup. `isNew` indicates whether the signup created
-// a new user; the current policy sends regardless.
+// Dispatches the welcome email for a signup. Sends only when the signup created a NEW user
+// -- the mainline's duplicate-welcome fix, re-expressed here after the split moved the send
+// out of `handleSignup`.
 //
 export const dispatchWelcome = (email: string, isNew: boolean): void => {
 
-    void isNew;
-
-    sendWelcomeEmail(email);
+    if (isNew) {
+        sendWelcomeEmail(email);
+    }
 };

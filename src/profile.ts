@@ -9,11 +9,12 @@ export const saveProfile = (profile: Profile): void => {
 };
 
 //
-// Reads a user's preferences out of the (now flat) preferences array.
+// Reads a user's preferences out of the flat preferences array, returning a defensive copy
+// so callers cannot mutate stored state.
 //
 export const getPreferences = (email: string): string[] => {
 
     const profile = profiles.get(email);
 
-    return profile ? profile.preferences : [];
+    return profile ? [...profile.preferences] : [];
 };
