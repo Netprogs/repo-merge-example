@@ -9,12 +9,12 @@ export const saveProfile = (profile: Profile): void => {
 };
 
 //
-// Reads a user's preferences out of the wrapped envelope. Callers depend on this accessor
-// rather than reaching into `preferences.value.data` themselves.
+// Reads a user's preferences out of the wrapped envelope, returning a defensive copy so
+// callers cannot mutate stored state.
 //
 export const getPreferences = (email: string): string[] => {
 
     const profile = profiles.get(email);
 
-    return profile ? profile.preferences.value.data : [];
+    return profile ? [...profile.preferences.value.data] : [];
 };
