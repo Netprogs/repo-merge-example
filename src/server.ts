@@ -42,6 +42,11 @@ const handle = async (req: IncomingMessage, res: ServerResponse): Promise<void> 
 
     try {
 
+        if (req.method === 'GET' && req.url === '/health') {
+            send(res, 200, { ok: true });
+            return;
+        }
+
         if (req.method === 'POST' && req.url === '/login') {
 
             const body = await readJsonBody(req);
