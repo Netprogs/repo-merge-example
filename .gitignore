@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Reconciliation sweep output (npm run reconcile)
+.reconcile-out/
+
+# Editor / OS metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Disposable AI scratch / capture folder (see docs/AGENTS.md "Sandbox git fallback")
+.ai-input-files/

@@ -1,0 +1,18 @@
+Before executing any task, read /AGENTS.md and follow it verbatim.
+
+This repository is a runnable branch-reconciliation example: a long-lived
+`refactor` branch kept current against a moving `main`. Key entry points:
+- /AGENTS.md                                     -- code style + working rules (read first)
+- docs/getting-started.md                        -- how the documentation system works
+- docs/AGENTS.md                                 -- the documentation lifecycle contract
+- docs/playbooks/branch-reconciliation-prompt.md -- the read-only sweep that maps the merge
+- docs/scripts/reconcile-branch.js               -- npm run reconcile (the sweep harness)
+
+Constraints (see /AGENTS.md for the full set):
+- Do not run git, tsc, eslint, or tests. Ask the human to run them and report back.
+- Prefer full refactoring over shims. No phase/step/plan markers in code comments.
+- Documentation is ASCII-only; the character-set check (npm run check:doc-chars) is human-run.
+- Reconciliation: the sweep is read-only and never runs the merge. The human runs
+  `git merge`; a session resolves the predicted conflicts by editing files, guided by
+  the map. When a test fails after a merge, decide whether the test or the code is
+  wrong from INTENT -- never patch a test green just to clear the board.

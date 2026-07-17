@@ -1,0 +1,25 @@
+{
+  "name": "branch-reconciliation-example",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Runnable branch-reconciliation example: a long-lived refactor branch kept current against a moving mainline, with the read-only sweep harness.",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "tsc && node --test \"dist/**/*.test.js\"",
+    "check:doc-chars": "node docs/scripts/check-doc-chars.js",
+    "reconcile": "node docs/scripts/reconcile-branch.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/node": "^20.14.0",
+    "eslint": "^9.9.0",
+    "typescript": "^5.5.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}
