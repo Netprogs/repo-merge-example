@@ -1,6 +1,6 @@
 import { createServer, IncomingMessage, ServerResponse } from 'http';
 
-import { handleLogin } from './auth/login';
+import { handleLogin } from './modules/auth/login';
 import { handleSignup } from './signup/signup';
 
 
