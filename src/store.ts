@@ -10,16 +10,22 @@ const welcomeEmailLog: string[] = [];
 
 
 //
-// Options passed when (re)building the store. `seed` preloads users so a test or a boot
-// path can start from a known set.
+// Options passed when (re)building the store. `seed` preloads users; `clock` is required at
+// runtime (a build with no clock throws), though it is optional in the type so existing
+// callers still compile.
 //
 export interface StoreRefs {
 
     seed?: User[];
+    clock?: () => number;
 }
 
 
 export const buildStore = (refs: StoreRefs = {}): void => {
+
+    if (!refs.clock) {
+        throw new Error('buildStore requires a clock');
+    }
 
     usersByEmail.clear();
 
