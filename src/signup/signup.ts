@@ -24,9 +24,8 @@ export const handleSignup = (req: SignupRequest): SignupResult => {
 
     if (!existing) {
         saveUser({ email: req.email, passwordHash: hash(req.password) });
+        sendWelcomeEmail(req.email);
     }
-
-    sendWelcomeEmail(req.email);
 
     return { status: 201, body: { email: req.email } };
 };
