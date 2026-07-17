@@ -9,12 +9,11 @@ export const saveProfile = (profile: Profile): void => {
 };
 
 //
-// Reads a user's preferences out of the wrapped envelope. Callers depend on this accessor
-// rather than reaching into `preferences.value.data` themselves.
+// Reads a user's preferences out of the (now flat) preferences array.
 //
 export const getPreferences = (email: string): string[] => {
 
     const profile = profiles.get(email);
 
-    return profile ? profile.preferences.value.data : [];
+    return profile ? profile.preferences : [];
 };
