@@ -1,4 +1,4 @@
-import { SignupRequest } from '../types';
+import { Credentials } from '../types';
 import { findUser, saveUser } from '../store';
 import { dispatchWelcome } from './welcome-dispatch';
 
@@ -14,7 +14,7 @@ export interface SignupResult {
     status: number;
 }
 
-export const handleSignup = (req: SignupRequest): SignupResult => {
+export const handleSignup = (req: Credentials): SignupResult => {
 
     if (!req.email || !req.password) {
         return { status: 400, body: { error: 'email and password are required' } };
