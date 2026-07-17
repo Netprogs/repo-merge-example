@@ -1,6 +1,6 @@
 import { SignupRequest } from '../types';
 import { findUser, saveUser } from '../store';
-import { sendWelcomeEmail } from '../email/welcome';
+import { dispatchWelcome } from './welcome-dispatch';
 
 
 const hash = (password: string): string => {
@@ -21,12 +21,13 @@ export const handleSignup = (req: SignupRequest): SignupResult => {
     }
 
     const existing = findUser(req.email);
+    const isNew = !existing;
 
-    if (!existing) {
+    if (isNew) {
         saveUser({ email: req.email, passwordHash: hash(req.password) });
     }
 
-    sendWelcomeEmail(req.email);
+    dispatchWelcome(req.email, isNew);
 
     return { status: 201, body: { email: req.email } };
 };
