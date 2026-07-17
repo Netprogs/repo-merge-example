@@ -8,5 +8,5 @@ export const sendWelcomeEmail = (email: string): void => {
 
     recordWelcomeEmail(email);
 
-    console.log(`[email] welcome sent to ${email}`);
+    console.log(`[email] welcome email dispatched to ${email}`);
 };
