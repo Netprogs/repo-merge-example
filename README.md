@@ -160,4 +160,4 @@ Part of the "Beyond Vibe Coding" series on agentic engineering:
 - [Beyond Vibe Coding: Using AGENTS.md to Build a File System That Enforces Code Discipline on AI](https://medium.com/@netprogsdev/beyond-vibe-coding-using-agents-md-to-build-a-file-system-that-enforces-code-discipline-on-ai-bf55a843d340)
 - [Beyond Vibe Coding: A Production-Ready AI Guardrail System You Can Clone Today](https://medium.com/@netprogsdev/beyond-vibe-coding-a-production-ready-ai-guardrail-system-you-can-clone-today-f15c68f737c2)
 - [Beyond Vibe Coding: Handing an LLM a Legacy Module](https://medium.com/@netprogsdev/beyond-vibe-coding-handing-an-llm-a-legacy-module-a9fdd8f5586b)
-- Beyond Vibe Coding: Merging Volatile Branches -- TODO: add link once published.
+- [Beyond Vibe Coding: Merging Volatile Branches](https://medium.com/@netprogsdev/beyond-vibe-coding-merging-volatile-branches-f3936d6c7f58)
