@@ -15,6 +15,10 @@ export interface LoginResult {
 
 export const handleLogin = (req: LoginRequest): LoginResult => {
 
+    if (!req.email || !req.password) {
+        return { status: 401, body: { error: 'invalid credentials' } };
+    }
+
     const user = findUser(req.email);
 
     if (!user || user.passwordHash !== hash(req.password)) {
