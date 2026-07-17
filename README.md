@@ -39,9 +39,10 @@ npm run build                # tsc
 ## 1. Prime an agent, then run the sweep
 
 Paste `docs/playbooks/session-init-prompt.md` into a fresh AI session, then the sweep
-prompt in `docs/playbooks/branch-reconciliation-prompt.md`. The sweep is **read-only** --
-it never runs the merge. It produces a map of the divergence. The harness does the
-enumeration:
+prompt in `docs/playbooks/branch-reconciliation-prompt.md`. The sweep is **read-only**, and
+**you** run it, not the agent -- a sweep can misfire in an agent's sandbox (a truncated file,
+a stale view of git), so the human runs the tool and the agent reasons over the output you
+capture. Run the harness yourself and paste the result back:
 
 ```
 npm run reconcile            # OLD=origin/main, NEW=HEAD (refactor), whole repo
