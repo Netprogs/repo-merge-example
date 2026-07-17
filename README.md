@@ -53,7 +53,7 @@ Expected buckets:
 only-old (clean bring-forward):        4    email/welcome.ts, admin/reset.ts, store.test.ts, signup/signup.test.ts
 both-touched (same path both sides):   3    server.ts, signup/signup.ts, profile.ts
 move-conflicts (renamed away on NEW):  1    auth/login.ts  ->  modules/auth/login.ts
-only-mine (your refactor surface):     4    modules/auth/login.ts, types.ts, store.ts, signup/welcome-dispatch.ts
+only-mine (your refactor surface):     6    modules/auth/login.ts, types.ts, store.ts, signup/welcome-dispatch.ts, + 2 workstream docs under docs/future/engine-refactor/
 reshape candidates:                    3    (raw hits -- all tooling/docs noise; see note)
 ```
 
